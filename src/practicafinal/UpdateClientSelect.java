@@ -110,11 +110,6 @@ public class UpdateClientSelect extends javax.swing.JFrame {
         userText.setBackground(new java.awt.Color(255, 255, 255));
         userText.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
         userText.setForeground(new java.awt.Color(0, 0, 0));
-        userText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userTextActionPerformed(evt);
-            }
-        });
 
         jButton1.setBackground(new java.awt.Color(51, 51, 255));
         jButton1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
@@ -202,10 +197,6 @@ public class UpdateClientSelect extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void userTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_userTextActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -248,6 +239,6 @@ public class UpdateClientSelect extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    public static javax.swing.JTextField userText;
+    private javax.swing.JTextField userText;
     // End of variables declaration//GEN-END:variables
 }

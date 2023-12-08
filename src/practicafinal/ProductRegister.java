@@ -125,14 +125,14 @@ public class ProductRegister extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Nombre", "Apellido", "Numero", "Correo", "Usuario"
+                "Nombre", "Marca", "Categoria", "Precio", "Cantidad"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, true, true, true, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
