@@ -93,6 +93,11 @@ public class ClientRegister extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        tbClient = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         tbClient.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

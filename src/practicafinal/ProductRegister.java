@@ -23,12 +23,14 @@ public class ProductRegister extends javax.swing.JFrame {
     /**
      * Creates new form ProductRegister
      */
+    
     public ProductRegister() {
         initComponents();
         setLocationRelativeTo(null);
         jPanel1.setBackground(new Color(0,0,0,180));
+        showData();
     }
-    
+    //Mostrar Tabla
     public static void showData() {
         try {
             DefaultTableModel model = new DefaultTableModel();
@@ -40,7 +42,7 @@ public class ProductRegister extends javax.swing.JFrame {
             Conectar conn = new Conectar();
             Connection con = Conectar.conectarse("Rey", "rey1234", "jdbc:mysql://localhost:3306/rdb"+"?useUnicode=true&characterEncoding=UTF-8");
             
-            String sql = "select product_name, product_brand, product_category, price, product_cuality from products;";
+            String sql = "select product_name, product_brand, product_category, price, product_quantity, id from products;";
             stmt = con.prepareStatement(sql);
             rs = stmt.executeQuery();
             
@@ -53,6 +55,8 @@ public class ProductRegister extends javax.swing.JFrame {
             model.addColumn("Categoria");
             model.addColumn("Precio");
             model.addColumn("Cantidad");
+            model.addColumn("ID");
+            
             while (rs.next())
             {
                 Object[] filas = new Object[countColumns];
@@ -120,19 +124,24 @@ public class ProductRegister extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, 50));
 
+        tbProduct = new javax.swing.JTable(){
+            public boolean isCellEditable(int rowIndex, int colIndex){
+                return false;
+            }
+        };
         tbProduct.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Nombre", "Marca", "Categoria", "Precio", "Cantidad"
+                "Nombre", "Marca", "Categoria", "Precio", "Cantidad", "ID"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -224,15 +233,18 @@ public class ProductRegister extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        NuevoProducto open = new NuevoProducto();
+        open.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        UpdateProductSelect open = new UpdateProductSelect();
+        open.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        EliminarProducto open = new EliminarProducto();
+        open.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

@@ -78,7 +78,7 @@ public class UpdateClient extends javax.swing.JFrame {
         num(numberText2);
         num(numberText3);
     }
-    
+    //Evidar entrada de caracteres no numericos
         private void num(JTextField a){
             a.addKeyListener(new KeyAdapter() {
                 public void keyTyped(KeyEvent e){
@@ -125,7 +125,7 @@ public class UpdateClient extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 204));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user.png"))); // NOI18N
 

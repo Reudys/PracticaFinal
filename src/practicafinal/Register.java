@@ -35,7 +35,6 @@ public class Register extends javax.swing.JFrame {
     con = Conectar.conectarse(user, pass, url);
 
     if (con != null) {
-        // Resto del código para insertar en la base de datos
             String textUser = userText.getText();
             String textFname = fNameText.getText();
             String textLname = lNameText.getText();

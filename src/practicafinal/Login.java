@@ -38,8 +38,6 @@ public class Login extends javax.swing.JFrame {
         String textPass = passText.getText();
 
         if (!textUser.isEmpty() && !textPass.isEmpty()) {
-            // Resto de tu código...
-
             String query = "SELECT * FROM USERS WHERE USER_NAME = ? AND PASS = ?";
             PreparedStatement stmt = con.prepareStatement(query);
 
@@ -52,6 +50,7 @@ public class Login extends javax.swing.JFrame {
                 Inicio open = new Inicio();
                 open.setVisible(true);
                 dispose();
+                System.out.println("Holaaaaa");
             } else {
                 JOptionPane.showMessageDialog(null, "No se ha encontrado ningún resultado");
             }
